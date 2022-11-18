@@ -1,0 +1,41 @@
+{{ define "main" -}}
+
+<ul class="posts">
+
+  {{ range ( where .Site.RegularPages.ByPublishDate.Reverse "Type" "posts" ) -}}
+
+  <li class="post-list-entry">
+    <ul class="flat-list">
+      <li><time datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z0700" }}" class="post-date">{{ .PublishDate.Format "Mon, Jan 2, 2006" }}</time> </li>
+      <li>&raquo;</li>
+      <li><p><a href="{{ .Permalink }}">{{ .Title }}</a></p></li>
+    </ul>
+    <ul class="flat-list">
+      <li> Reading time: {{ div .Page.FuzzyWordCount 60 }} m </li>
+      <li> categories:
+        {{ range $key, $value := .Params.categories }}
+          {{if ne $value "null"}}
+            <span class="tag-style-1"><a href="categories/{{ $value | urlize  }}">{{ $value }}</a></span>
+          {{end}}
+        {{ end }}
+      </li>
+      <li> tags: 
+        {{ range $key, $value := .Params.tags }}
+          {{if ne $value "null"}}
+            <span class="tag-style-1"><a href="tags/{{ $value | urlize  }}">{{ $value }}</a></span>
+          {{end}}
+        {{end}}
+      </li>
+    </ul>
+    <p>{{ .Summary }}</p>
+    {{ if .Truncated }}
+      <div class="read-more-link">
+        <a href="{{ .RelPermalink }}">Read More…</a>
+      </div>
+    {{ end }}
+  </li> 
+
+{{- end }}
+
+</ul>
+{{- end }}

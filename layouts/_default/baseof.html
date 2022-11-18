@@ -1,11 +1,18 @@
 <!DOCTYPE html>
+<!-- TODO: add language and appcache -->
 <html>
     {{- partial "head.html" . -}}
     <body>
+        <header>
         {{- partial "header.html" . -}}
+        </header>
+        <main>
         <div id="content">
         {{- block "main" . }}{{- end }}
         </div>
+        </main>
+        <footer>
         {{- partial "footer.html" . -}}
+        </footer>
     </body>
 </html>

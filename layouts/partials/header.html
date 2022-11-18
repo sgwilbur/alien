@@ -1,0 +1,17 @@
+
+    <h3>{{ .Site.Title }}</h3>
+    <p>
+      <i>{{ .Site.Title }}</i>
+    </p>
+    <nav role="navigation">
+      <a href="{{ .Site.BaseURL }}/" title="home"> home </a>
+      | <a href="{{ .Site.BaseURL }}/about/" title="about"> about </a>
+      | <a href="{{ .Site.BaseURL }}/pubs/" title="published work"> content </a>
+      | <a href="{{ .Site.BaseURL }}/rss/" title="rss feed"> feed </a>
+      | <a href="#" id="searchtoggle" title="Toggle Search View">search</a>
+    </nav>
+
+    <div id="search">
+      <span id="searchhide"> Hide Search </span>
+      <div class="gcse-search"></div>
+    </div>
