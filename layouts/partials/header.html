@@ -4,11 +4,10 @@
       <i>{{ .Site.Title }}</i>
     </p>
     <nav role="navigation">
-      <a href="{{ .Site.BaseURL }}/" title="home"> home </a>
-      | <a href="{{ .Site.BaseURL }}/about/" title="about"> about </a>
-      | <a href="{{ .Site.BaseURL }}/pubs/" title="published work"> content </a>
-      | <a href="{{ .Site.BaseURL }}/rss/" title="rss feed"> feed </a>
-      | <a href="#" id="searchtoggle" title="Toggle Search View">search</a>
+      {{- range $service := .Site.Menus.navigation -}}
+      &nbsp;<a href="{{ $service.URL }}">{{ $service.Name }}</a>&nbsp;|&nbsp;
+      {{- end -}}
+      &nbsp; <a href="#" id="searchtoggle" title="Toggle Search View">search</a>
     </nav>
 
     <div id="search">
