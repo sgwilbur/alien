@@ -1,19 +1,20 @@
-{{ .Site.Menus.socials }}
 <nav>
   {{- range $service := .Site.Menus.socials -}}
     | <a href="{{ $service.URL }}"> {{ $service.Name }} </a> | 
   {{- end -}}
 </nav>
-{{ $baseurl := urls.Parse .Site.BaseURL }}
-<p>
-    <a href="http://validator.w3.org/check?uri=http%3A%2F%2F{{ $baseurl.Host }}%2F;ss=1">html5</a>
-  | <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2F{{ $baseurl.Host }}%2F">css</a>
-  | abutili design 2005 - 2022
-  | site last rendered: {{ now.Format "Mon, 02 Jan 2006 15:04:05 -0600" }} </p>
+
 <nav>
       <a href="{{ .Site.BaseURL }}/sitemap.xml">sitemap</a>
       | <a href="{{ .Site.BaseURL }}/index.xml"> rss 2.0 </a>
+      <!--
       | <a href="{{ .Site.BaseURL }}/atom.xml"> atom 1.0 </a>
+      -->
+      {{- $baseurl := urls.Parse .Site.BaseURL -}} 
+      | <a href="http://validator.w3.org/check?uri=http%3A%2F%2F{{ $baseurl.Host }}%2F;ss=1">html5</a>
+      | <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2F{{ $baseurl.Host }}%2F">css</a>
+      | abutili design 2005 - 2022
+      | rendered: {{ now.Format "20060102-150405-0600" }} </p>
 </nav>
 
 <script>
