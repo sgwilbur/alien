@@ -18,3 +18,69 @@
     padding-right: 1rem;
     margin: 0 auto;
   }
+
+@media print
+{
+
+  *
+  {
+  margin: 0;
+  padding: 0;
+  }
+
+  @page
+  {
+    margin: 0;
+    padding: 0;
+  }
+
+  body
+  {
+    font: 12pt Georgia, "Times New Roman", Times, serif;
+    line-height: 1.3;
+    margin: 0;
+    margin-left: 1em;
+    width: 100%;
+    transition: none;
+  }
+
+  header, footer
+  {
+    display: none;
+  }
+
+  main
+  {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    transition: none;
+  }
+
+  article
+  {
+    transition: none;
+  }
+
+  article header
+  {
+    display: block
+  }
+/*
+  a:link, a:visited { background: transparent; color:#333; text-decoration:none; }
+  a:link[href^="http://"]:after, a[href^="http://"]:visited:after {content: " (" attr(href) ") "; font-size: 11px;}
+  a[href^="http://"] {color:#000;}
+ */
+  img
+  {
+    max-width: 500px;
+    border: 1px solid #ddd;
+  }
+
+  .back-to-top
+  {
+    display: none;
+  }
+
+
+}/* end media print */
