@@ -32,12 +32,12 @@
 </script>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.Config.Services.GoogleAnalytics.ID }}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '{{ site.Config.Services.GoogleAnalytics.ID }}');
+  gtag('config', '{{ .Site.Params.googleAnalytics }}');
 </script>
 
 <a href="#" class="back-to-top">Back to Top</a>
